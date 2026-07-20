@@ -1,6 +1,5 @@
 %% =========================================================
 % LS-SVM on Breast Cancer Wisconsin
-% Versione semplice e pronta per l'esame
 % - train / validation / test split
 % - mini grid search su gamma e sigma
 % - training finale e valutazione
@@ -37,7 +36,7 @@ Xte = X(idx(n_trainval+1:end), :);   % 20% test
 yte = y(idx(n_trainval+1:end));
 
 %% 4) Secondo split: training / validation
-% Dal blocco training+validation ricavo un validation set interno
+% Dal blocco training+validation ricaviamo un validation set interno
 n_tv = size(X_trainval,1);
 idx_tv = randperm(n_tv);
 
@@ -49,7 +48,7 @@ Xval = X_trainval(idx_tv(n_train+1:end), :);   % 16% del totale
 yval = y_trainval(idx_tv(n_train+1:end));
 
 %% 5) Mini grid search su gamma e sigma
-% Provo poche combinazioni, così il codice resta semplice
+% Prove 
 gamma_list = [1 10 50 100];
 sigma_list = [0.5 1 2 5];
 
